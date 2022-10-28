@@ -19,6 +19,15 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Roboto', sans-serif;
+
+  min-height: 100vh;
+
+  display: grid;
+}
+
+main {
+  justify-self: center;
+  align-self: end;
 }
 
 button {
@@ -46,6 +55,7 @@ button svg {
 #timer {
   font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
   display: flex;
+  margin-bottom: 1.6rem;
 }
 
 #controls {
@@ -60,3 +70,12 @@ button svg {
   width: clamp(10rem, 10rem + 30vw, 22.8rem);
   height: clamp(8rem, 5rem + 10vh, 10.8rem);
 }
+
+footer {
+  justify-self: end;
+  align-self: end;
+
+  padding: 0 4rem 3.2rem 0;
+}
+
+
