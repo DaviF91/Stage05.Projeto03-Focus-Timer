@@ -8,8 +8,8 @@
   --bg-color: #121214;
 
   --base-color: 194;
-  --bg-primary-light: hsla(var(--base-color), 100%, 63%, 0.13); 
-  --primyre-color: hsl(var(--base-color), 100%, 63%); 
+  --bg-primary-light: hsla(var(--base-color), 100%, 63%, 0.13);
+  --primyre-color: hsl(var(--base-color), 100%, 63%);
 
   --text-color: #ffffff;
   font-size: 62.5%;
@@ -35,7 +35,6 @@ button {
   border: none;
 
   cursor: pointer;
-
 }
 
 .hide {
@@ -46,11 +45,11 @@ button svg {
   width: clamp(6.4rem, 2rem + 12vw, 3.2rem);
 }
 
-.play svg path, .pause svg path, .sound-on svg path {
+.play svg path,
+.pause svg path,
+.sound-on svg path {
   fill: var(--primyre-color);
 }
-
-
 
 #timer {
   font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
@@ -77,5 +76,3 @@ footer {
 
   padding: 0 4rem 3.2rem 0;
 }
-
-
