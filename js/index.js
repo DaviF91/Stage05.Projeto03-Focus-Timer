@@ -1,3 +1,7 @@
+import resetControls from "./constrols"
+
+import {countDown, resetTimer} from "./timer"
+
 const buttonPlay = document.querySelector('.play')
 const buttonPause = document.querySelector('.pause')
 const buttonSet = document.querySelector('.set')
@@ -9,52 +13,13 @@ const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 let minutes = Number(minutesDisplay.textContent)
 
-function resetControls(){
-  buttonPlay.classList.remove('hide')
-  buttonPause.classList.add('hide')
-  buttonSet.classList.remove('hide')
-  buttonStop.classList.add('hide')
-}
-
-function updateTimerDisplay (minutes, seconds){
-  minutesDisplay.textContent = String(minutes).padStart(2, '0')
-  secondsDisplay.textContent = String(seconds).padStart(2, '0')
-}
-
-function resetTimer() {
-  updateTimerDisplay(minutes, 0)
-  clearTimeout(timerTimeOut)
-}
-
-function countDown() {
-  timerTimeOut = setTimeout(function () {
-    let seconds = Number(secondsDisplay.textContent)
-    let minutes = Number(minutesDisplay.textContent)
-
-    updateTimerDisplay(minutes, 0)
-
-    if (minutes <= 0) {
-      resetControls()
-      return
-    }
-
-    if (seconds <= 0) {
-      seconds = 3
-      --minutes
-    }
-
-    updateTimerDisplay(minutes, String(seconds - 1))
-
-    countDown()
-  }, 1000)
-}
 
 buttonPlay.addEventListener('click', function () {
   buttonPlay.classList.add('hide')
   buttonPause.classList.remove('hide')
   buttonSet.classList.add('hide')
   buttonStop.classList.remove('hide')
-  countDown()
+  countDown(secondsDisplay, minutesDisplay, resetControls)
 })
 
 buttonPause.addEventListener('click', function () {
