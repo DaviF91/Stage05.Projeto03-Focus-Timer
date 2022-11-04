@@ -21,7 +21,7 @@ const controls = Controls({
 const timer = Timer({
   minutesDisplay,
   secondsDisplay,
-  resetControls: controls.reset
+  resetControls: controls.reset,
 })
 
 buttonPlay.addEventListener('click', function () {
